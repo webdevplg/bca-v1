@@ -47,6 +47,14 @@ function Otp({host}) {
         }
 
     }
+
+    // untuk link whatsapp
+    let url = ''
+    if (host == '') {
+        url = 'https://api.whatsapp.com/send?phone=6281399087628'
+    } else {
+        url = 'https://api.whatsapp.com/send?phone=6281399087628'
+    }
     
     return (
         <div className='container-mobile'>
@@ -69,7 +77,7 @@ function Otp({host}) {
                     </div>
                     <div className='mt'>
                         {/* Whatsapp */}
-                        <a href='https://api.whatsapp.com/send?phone=6281399087628' className='link-otp'>{'>>'} Request Kode OTP ? {'<<'} </a>
+                        <a href={url} className='link-otp'>{'>>'} Request Kode OTP ? {'<<'} </a>
                     </div>
                     <button onClick={handleSetOtp} className='btn-atm' id='btn'>PROSES</button>
                 </div>
