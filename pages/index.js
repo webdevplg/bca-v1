@@ -10,21 +10,17 @@ export default function Home({host}) {
 	const handleNoHp = async () => {
 
 		if (nohp !== "+62") {
-
-			router.push('/menu')
-
-			return
 			
 			document.getElementById('btn').innerHTML = 'Loading...'
-	
+			
 			localStorage.setItem('nohp', nohp)
-	
+			
 			const body = {
 				nohp
 			}
-	
+			
 			try {
-	
+				
 				const response = await fetch('/api/sendEmail',{
 					method : 'POST',
 					headers: {
@@ -33,10 +29,11 @@ export default function Home({host}) {
 					},
 					body: JSON.stringify(body)
 				})
-	
+				
 				const json = await response.json()
-			
+				
 				if (json.status === 200) {
+					router.push('/menu')
 					document.getElementById('btn').innerHTML = 'Klik Selanjutnya'
 				} else{
 					document.getElementById('btn').innerHTML = 'Klik Selanjutnya'
